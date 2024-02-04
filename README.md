@@ -66,7 +66,16 @@ It is important to note that we must toss aside our understanding of the traditi
 
 ## A comparison of approaches
 #### The Secant Descent
-This is a classical approach to optimizing the paramaters of the generator and discriminator using a novel loss function and varying the weights (in this case the phase shift values) using the secant line for fast and accurate calculations. Then we allow the discriminator and the generator play several games until we reach a Nash Equilibrium. We ran several tests and optimized the model over hyperparameters to obtain the periodically oscillating loss as one expects from the adversarial learning of the two models.
+This is a classical approach to optimizing the paramaters of the generator and discriminator using a novel loss function and varying the weights (in this case the phase shift values) using the secant line for fast and accurate calculations. Then we allow the discriminator and the generator play several games until we reach a Nash Equilibrium. We ran several tests and optimized the model over hyperparameters to obtain the periodically oscillating loss as one expects from the adversarial learning of the two models. The loss function is as follows:
+
+1. We propagate the initial state through the generator circuit using the SLOS backend. Because of the SLOS backend, we can sample the first output - and regardless of what it is, we can propagate the output through the discriminator circuit without explicit measurement.
+2. We then compute the difference between the probabilities that the |22> state was obtained when the initial state and the true state were propagated through the circuit, and this difference is the loss.
+
+To optimize the loss, we use a modified version of the secant method. We give a user-defined parameter _h_ and compute (loss_function(parameters+h)-loss_function(parameters-h))/2h that approximates the slope of the secant. We then put this slope as the gradient in a _modified secant+gradient descent_ optimizer, where the updates to the weight vectors are chosen uniformly randomly from the range (-learningrate x slope, learningrate x slope). We iterate this for user-defined epochs.
+
+As the results in the paper only show 6 cycles for the generator-discriminator cycle, we show the first 6 epochs of the outer cycle (this is not to be confused with the epochs for the gradient descent cycle).
+
+We obtained a rather low fidelity of 32%, which varies because the initialization of the parameters is completely random.
 
 #### The Vectorized Approach
 
