@@ -101,11 +101,18 @@ This is the loss obtained by the secant-descent method.
 <div style="text-align: center;">
   <img src="images/secdesc.png" alt="secdesgraph" width=""/>
 </div>
+
+<div style="text-align: center;">
+  <img src="images/0loss.png" alt="secdesgraph" width=""/>
+</div>
+
 ## Results
 
 Fidelity from Secant Descent = 32%
 
 Fidelity from Vectorized QGAN = 45%
+
+Fidelity from Finite-Difference Solver - 28%
 
 ## Sources
 
