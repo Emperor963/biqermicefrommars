@@ -99,7 +99,7 @@ Following is a demonstration of the high confidence output of vectorized QGAN
 
 This is the loss obtained by the secant-descent method.
 <div style="text-align: center;">
-  <img src="images/secdes.png" alt="secdesgraph" width=""/>
+  <img src="images/secdesc.png" alt="secdesgraph" width=""/>
 </div>
 ## Results
 
