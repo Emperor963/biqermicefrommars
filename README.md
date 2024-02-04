@@ -66,7 +66,11 @@ It is important to note that we must toss aside our understanding of the traditi
 
 ## A comparison of approaches
 #### The Secant Descent
+This is a classical approach to optimizing the paramaters of the generator and discriminator using a novel loss function and varying the weights (in this case the phase shift values) using the secant line for fast and accurate calculations. We ran several tests and optimized the model over hyperparameters to obtain the periodically oscillating loss as one expects from the adversarial learning of the two models.
+
 #### The Vectorized Approach
+
+This is a rather different approach at optimizing the game strategy of the generator and the discriminator. If we assume both of these neural nets to be functions/operators by the universal approximation theorem, we can assume the input state to be a vector, and the output to be the desired maximally entangled state $(|01> + |12> + |23> + |30>)$. Then the idea is to minimize a loss function defined using the dot product(desired vector output, generator output) - 1. This strategy results in very clean results, as shown in the Results section, but seems to be stuck in false minima that prevents it from training to the best and required output from the Generator.
 
 ## Bonus no. 1!
 
