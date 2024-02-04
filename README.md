@@ -97,7 +97,10 @@ Following is a demonstration of the high confidence output of vectorized QGAN
   <img src="images/QGAN_Vectorized.png" alt="drawing" width=""/>
 </div>
 
-
+This is the loss obtained by the secant-descent method.
+<div style="text-align: center;">
+  <img src="images/secdes.png" alt="secdesgraph" width=""/>
+</div>
 ## Results
 
 Fidelity from Secant Descent = 32%
