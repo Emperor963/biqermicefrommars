@@ -66,7 +66,7 @@ It is important to note that we must toss aside our understanding of the traditi
 
 ## A comparison of approaches
 #### The Secant Descent
-This is a classical approach to optimizing the paramaters of the generator and discriminator using a novel loss function and varying the weights (in this case the phase shift values) using the secant line for fast and accurate calculations. We ran several tests and optimized the model over hyperparameters to obtain the periodically oscillating loss as one expects from the adversarial learning of the two models.
+This is a classical approach to optimizing the paramaters of the generator and discriminator using a novel loss function and varying the weights (in this case the phase shift values) using the secant line for fast and accurate calculations. Then we allow the discriminator and the generator play several games until we reach a Nash Equilibrium. We ran several tests and optimized the model over hyperparameters to obtain the periodically oscillating loss as one expects from the adversarial learning of the two models.
 
 #### The Vectorized Approach
 
