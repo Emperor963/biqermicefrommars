@@ -79,8 +79,17 @@ This is a rather different approach at optimizing the game strategy of the gener
 ## Bonus no. 3!
 
 ## Graphs
+Following is a demonstration of the high confidence output of vectorized QGAN
+<div style="text-align: center;">
+  <img src="images/QGAN_Vectorized.png" alt="drawing" width=""/>
+</div>
+
 
 ## Results
+
+Fidelity from Secant Descent = 32%
+
+Fidelity from Vectorized QGAN = 45%
 
 ## Sources
 
