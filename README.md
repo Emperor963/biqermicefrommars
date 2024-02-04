@@ -62,7 +62,7 @@ It is important to note that we must toss aside our understanding of the traditi
 
 ## Step 3: Train the Q-GAN
 
-
+We tried three approaches, each with varying degrees of success, to training the QGAN.
 
 ## A comparison of approaches
 #### The Secant Descent
@@ -80,6 +80,10 @@ We obtained a rather low fidelity of 32%, which varies because the initializatio
 #### The Vectorized Approach
 
 This is a rather different approach at optimizing the game strategy of the generator and the discriminator. If we assume both of these neural nets to be functions/operators by the universal approximation theorem, we can assume the input state to be a vector, and the output to be the desired maximally entangled state $(|01> + |12> + |23> + |30>)$. Then the idea is to minimize a loss function defined using the dot product(desired vector output, generator output) - 1. This strategy results in very clean results, as shown in the Results section, but seems to be stuck in false minima that prevents it from training to the best and required output from the Generator.
+
+#### Finite-Difference Gradient Descent Approach
+
+This was our initial approach. Given an arbitrary function **F**, we can approximate its derivatives by performing automatic differentiation (such as PyTorch's grad()). However, as we have no backpropagation defined, we cannot successfully perform backpropagation. We then created a finite-difference method that approximated the derivative using the definition of the derivative. To optimize, we utilized stochastic gradient descent. Our observations were that the loss went to 0 in the second iteration. We suspect that we are overfitting the model but could not successfully resolve the error even after using learning rates in the range of 1e-8. 
 
 ## Bonus no. 1!
 
