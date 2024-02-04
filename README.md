@@ -25,6 +25,8 @@ Quandela Challenge - Team 5 (BiQer Mice from Mars) Members: [Dhanvi Bharadwaj](h
   - [Step 2: Generate Initial Quantum State](#step-2-generate-initial-quantum-state)
   - [Step 3: Train the Q-GAN](#step-3-train-the-q-gan)
   - [A comparison of approaches](#a-comparison-of-approaches)
+      - [The Secant Descent](#the-secant-descent)
+      - [The Vectorized Approach](#the-vectorized-approach)
   - [Bonus no. 1!](#bonus-no-1)
   - [Bonus no. 2!](#bonus-no-2)
   - [Bonus no. 3!](#bonus-no-3)
@@ -63,6 +65,8 @@ It is important to note that we must toss aside our understanding of the traditi
 
 
 ## A comparison of approaches
+#### The Secant Descent
+#### The Vectorized Approach
 
 ## Bonus no. 1!
 
